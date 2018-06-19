@@ -16,6 +16,9 @@ cap = funcs.startCam()
 while(True):
 	_, frame = cap.read()
 	
+	if funcs.isDark(frame):
+		frame = funcs.enhance(frame, 4, 40)
+	
 	cv2.imshow("Feed", frame) 
 	if cv2.waitKey(1) == 27: 
 		break
