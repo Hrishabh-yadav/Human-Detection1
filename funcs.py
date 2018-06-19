@@ -37,7 +37,8 @@ def stopCam(cap):
 
 # include dependencies to haar cascades
 def haarCascades():
-	return 0
+	body_cascade = cv2.CascadeClassifier('C:\Python27\haarcascade_upperbody.xml') #download this haarcascade from https://github.com/opencv/opencv/tree/master/data/haarcascades
+	return body_cascade
 	
 
 # enhance image using contrast and brightness
