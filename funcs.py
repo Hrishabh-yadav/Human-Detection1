@@ -1,10 +1,8 @@
 '''
-
 File - funcs.py
 Project - Human Detection
 OS Support - Ubuntu 16.04 LTS
 Owner - Neuromancers, 2018
-
 '''
 
 import cv2
@@ -37,7 +35,13 @@ def stopCam(cap):
 
 # include dependencies to haar cascades
 def haarCascades():
-	return 0
+	haarCascadeMap = {}
+	#source: https://github.com/opencv/opencv/tree/master/data/haarcascades
+	haarCascadeMap['upperBody'] = cv2.CascadeClassifier('haarCascades\haarcascade_upperbody.xml')
+	haarCascadeMap['lowerBody'] = cv2.CascadeClassifier('haarCascades\haarcascade_lowerbody.xml')
+	haarCascadeMap['faceProfile'] = cv2.CascadeClassifier('haarCascades\haarcascade_profileface.xml')
+	haarCascadeMap['fullBody'] = cv2.CascadeClassifier('haarCascades\haarcascade_fullbody.xml')
+	return haarCascadeMap
 	
 
 # enhance image using contrast and brightness
