@@ -24,3 +24,5 @@ while(True):
 		break
 
 funcs.stopCam(cap)
+#just made some changes, try to ignore them
+#XYZZZ
